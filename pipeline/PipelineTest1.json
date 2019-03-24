@@ -24,8 +24,11 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "1InputDataset",
-						"type": "DatasetReference"
+						"referenceName": "111InputDataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"temp": "sfd"
+						}
 					}
 				],
 				"outputs": [
