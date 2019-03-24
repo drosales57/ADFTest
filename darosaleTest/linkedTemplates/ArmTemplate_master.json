@@ -11,11 +11,11 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
 		},
-		"1InputDataset_properties_typeProperties_fileName": {
+		"InputDataset_properties_typeProperties_fileName": {
 			"type": "string",
 			"defaultValue": "empty.txt"
 		},
-		"1InputDataset_properties_typeProperties_folderPath": {
+		"InputDataset_properties_typeProperties_folderPath": {
 			"type": "string",
 			"defaultValue": "testblobstorage/@{dataset().1temp}"
 		},
@@ -53,11 +53,11 @@
 					"AzureStorageLinkedService_connectionString": {
 						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
 					},
-					"1InputDataset_properties_typeProperties_fileName": {
-						"value": "[parameters('1InputDataset_properties_typeProperties_fileName')]"
+					"InputDataset_properties_typeProperties_fileName": {
+						"value": "[parameters('InputDataset_properties_typeProperties_fileName')]"
 					},
-					"1InputDataset_properties_typeProperties_folderPath": {
-						"value": "[parameters('1InputDataset_properties_typeProperties_folderPath')]"
+					"InputDataset_properties_typeProperties_folderPath": {
+						"value": "[parameters('InputDataset_properties_typeProperties_folderPath')]"
 					},
 					"OutputDataset_properties_typeProperties_folderPath": {
 						"value": "[parameters('OutputDataset_properties_typeProperties_folderPath')]"
