@@ -8,7 +8,7 @@
 		"parameters": {
 			"temp": {
 				"type": "String",
-				"defaultValue": "sfd"
+				"defaultValue": "input"
 			}
 		},
 		"type": "AzureBlob",
@@ -23,7 +23,10 @@
 				"firstRowAsHeader": false
 			},
 			"fileName": "empty.txt",
-			"folderPath": "testblobstorage/input"
+			"folderPath": {
+				"value": "testblobstorage/@{dataset().temp}",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
