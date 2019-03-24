@@ -17,7 +17,7 @@
 		},
 		"111InputDataset_properties_typeProperties_folderPath": {
 			"type": "string",
-			"defaultValue": "testblobstorage/input"
+			"defaultValue": "testblobstorage/@{dataset().temp}"
 		},
 		"OutputDataset_properties_typeProperties_folderPath": {
 			"type": "string",
@@ -93,7 +93,7 @@
 				"parameters": {
 					"temp": {
 						"type": "String",
-						"defaultValue": "sfd"
+						"defaultValue": "input"
 					}
 				},
 				"annotations": [],
@@ -109,7 +109,10 @@
 						"firstRowAsHeader": false
 					},
 					"fileName": "[parameters('111InputDataset_properties_typeProperties_fileName')]",
-					"folderPath": "[parameters('111InputDataset_properties_typeProperties_folderPath')]"
+					"folderPath": {
+						"value": "[parameters('111InputDataset_properties_typeProperties_folderPath')]",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
