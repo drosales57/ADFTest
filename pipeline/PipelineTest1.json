@@ -24,8 +24,11 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "1InputDataset",
-						"type": "DatasetReference"
+						"referenceName": "InputDataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"1temp": "input"
+						}
 					}
 				],
 				"outputs": [
