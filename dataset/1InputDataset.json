@@ -5,6 +5,12 @@
 			"referenceName": "AzureStorageLinkedService",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"temp": {
+				"type": "String",
+				"defaultValue": "sfd"
+			}
+		},
 		"type": "AzureBlob",
 		"typeProperties": {
 			"format": {
