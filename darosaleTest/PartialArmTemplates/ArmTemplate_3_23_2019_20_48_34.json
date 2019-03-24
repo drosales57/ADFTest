@@ -21,7 +21,6 @@
 					{
 						"name": "CopyfromBlobtoBlob",
 						"type": "Copy",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -29,7 +28,6 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"source": {
 								"type": "BlobSource",
@@ -52,15 +50,46 @@
 						"outputs": [
 							{
 								"referenceName": "OutputDataset",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
-				],
-				"annotations": []
+				]
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/111InputDataset')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/111InputDataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureStorageLinkedService",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"temp": {
+						"type": "String",
+						"defaultValue": "sfd"
+					}
+				},
+				"type": "AzureBlob",
+				"typeProperties": {
+					"format": {
+						"type": "TextFormat",
+						"columnDelimiter": ",",
+						"rowDelimiter": "",
+						"nullValue": "\\N",
+						"treatEmptyAsNull": true,
+						"skipLineCount": 0,
+						"firstRowAsHeader": false
+					},
+					"fileName": "empty.txt",
+					"folderPath": "testblobstorage/input"
+				}
+			}
 		}
 	]
 }

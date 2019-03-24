@@ -8,10 +8,10 @@
 		"AzureStorageLinkedService_connectionString": {
 			"value": ""
 		},
-		"1InputDataset_properties_typeProperties_fileName": {
+		"111InputDataset_properties_typeProperties_fileName": {
 			"value": "empty.txt"
 		},
-		"1InputDataset_properties_typeProperties_folderPath": {
+		"111InputDataset_properties_typeProperties_folderPath": {
 			"value": "testblobstorage/input"
 		},
 		"OutputDataset_properties_typeProperties_folderPath": {
