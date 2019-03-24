@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "darosaleTest"
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"1InputDataset_properties_typeProperties_fileName": {
+			"value": "empty.txt"
+		},
+		"1InputDataset_properties_typeProperties_folderPath": {
+			"value": "testblobstorage/input"
+		},
+		"OutputDataset_properties_typeProperties_folderPath": {
+			"value": "adftutorial/output"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
