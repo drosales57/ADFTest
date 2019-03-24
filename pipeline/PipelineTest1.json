@@ -25,10 +25,7 @@
 				"inputs": [
 					{
 						"referenceName": "1InputDataset",
-						"type": "DatasetReference",
-						"parameters": {
-							"temp": "sfd"
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
