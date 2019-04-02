@@ -41,7 +41,7 @@
 		],
 		"parameters": {
 			"tempParam": {
-				"type": "String"
+				"type": "string"
 			}
 		}
 	},
