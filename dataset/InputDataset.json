@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"1temp": {
+			"temp": {
 				"type": "String",
 				"defaultValue": "input"
 			}
@@ -24,7 +24,7 @@
 			},
 			"fileName": "empty.txt",
 			"folderPath": {
-				"value": "testblobstorage/@{dataset().1temp}",
+				"value": "testblobstorage/@{dataset().temp}",
 				"type": "Expression"
 			}
 		}

@@ -27,7 +27,7 @@
 						"referenceName": "InputDataset",
 						"type": "DatasetReference",
 						"parameters": {
-							"1temp": "input"
+							"temp": "input"
 						}
 					}
 				],
@@ -38,7 +38,12 @@
 					}
 				]
 			}
-		]
+		],
+		"parameters": {
+			"tempParam": {
+				"type": "String"
+			}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
