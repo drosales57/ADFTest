@@ -17,7 +17,7 @@
 		},
 		"InputDataset_properties_typeProperties_folderPath": {
 			"type": "string",
-			"defaultValue": "testblobstorage/@{dataset().1temp}"
+			"defaultValue": "testblobstorage/@{dataset().temp}"
 		},
 		"OutputDataset_properties_typeProperties_folderPath": {
 			"type": "string",
@@ -61,7 +61,7 @@
 								"referenceName": "InputDataset",
 								"type": "DatasetReference",
 								"parameters": {
-									"1temp": "input"
+									"temp": "input"
 								}
 							}
 						],
@@ -74,6 +74,11 @@
 						]
 					}
 				],
+				"parameters": {
+					"tempParam": {
+						"type": "String"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -91,7 +96,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
-					"1temp": {
+					"temp": {
 						"type": "String",
 						"defaultValue": "input"
 					}

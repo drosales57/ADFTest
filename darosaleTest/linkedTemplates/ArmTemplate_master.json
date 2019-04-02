@@ -17,7 +17,7 @@
 		},
 		"InputDataset_properties_typeProperties_folderPath": {
 			"type": "string",
-			"defaultValue": "testblobstorage/@{dataset().1temp}"
+			"defaultValue": "testblobstorage/@{dataset().temp}"
 		},
 		"OutputDataset_properties_typeProperties_folderPath": {
 			"type": "string",

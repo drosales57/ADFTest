@@ -12,7 +12,7 @@
 			"value": "empty.txt"
 		},
 		"InputDataset_properties_typeProperties_folderPath": {
-			"value": "testblobstorage/@{dataset().1temp}"
+			"value": "testblobstorage/@{dataset().temp}"
 		},
 		"OutputDataset_properties_typeProperties_folderPath": {
 			"value": "adftutorial/output"
