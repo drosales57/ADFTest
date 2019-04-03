@@ -21,7 +21,6 @@
 					{
 						"name": "CopyfromBlobtoBlob",
 						"type": "Copy",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -29,7 +28,6 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"source": {
 								"type": "BlobSource",
@@ -52,8 +50,7 @@
 						"outputs": [
 							{
 								"referenceName": "OutputDataset",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -62,10 +59,8 @@
 					"tempParam": {
 						"type": "string"
 					}
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		}
 	]
 }
