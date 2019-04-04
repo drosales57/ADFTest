@@ -27,7 +27,10 @@
 						"referenceName": "InputDataset",
 						"type": "DatasetReference",
 						"parameters": {
-							"temp": "input"
+							"temp": {
+								"value": "@pipeline().parameters.tempParam",
+								"type": "Expression"
+							}
 						}
 					}
 				],
