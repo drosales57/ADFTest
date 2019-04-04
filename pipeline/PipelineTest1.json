@@ -46,6 +46,11 @@
 			"tempParam": {
 				"type": "string"
 			}
+		},
+		"variables": {
+			"testVar": {
+				"type": "String"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
