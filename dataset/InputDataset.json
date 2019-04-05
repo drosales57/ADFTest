@@ -7,7 +7,7 @@
 		},
 		"parameters": {
 			"temp": {
-				"type": "string",
+				"type": "BadstringType",
 				"defaultValue": "input"
 			}
 		},
