@@ -49,7 +49,7 @@
 		},
 		"variables": {
 			"testVar": {
-				"type": "string"
+				"type": "Boolean"
 			}
 		}
 	},
