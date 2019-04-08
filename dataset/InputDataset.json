@@ -1,8 +1,8 @@
 {
 	"name": "InputDataset",
 	"properties": {
-		"linkedServiceName": 
-			"referenceName": { "AzureStorageLinkedService",
+		"linkedServiceName": {
+			"referenceName": "AzureStorageLinkedService",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
