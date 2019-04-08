@@ -3,7 +3,7 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureStorageLinkedService",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceeference"
 		},
 		"parameters": {
 			"temp": {
