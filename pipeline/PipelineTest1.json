@@ -44,7 +44,7 @@
 		],
 		"parameters": {
 			"tempParam": {
-				"type": "DoesNotExistType"
+				"type": "string"
 			}
 		},
 		"variables": {
