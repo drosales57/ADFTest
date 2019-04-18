@@ -1,0 +1,20 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set Variable1",
+				"type": "SetVariable",
+				"typeProperties": {
+					"variableName": "varTemp",
+					"value": "123"
+				}
+			}
+		],
+		"variables": {
+			"varTemp": {
+				"type": "String"
+			}
+		}
+	}
+}
