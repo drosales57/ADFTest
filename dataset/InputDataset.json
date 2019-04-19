@@ -22,7 +22,7 @@
 				"skipLineCount": 0,
 				"firstRowAsHeader": false
 			},
-			"fileName": "empty.txt"
+			"fileName": "empty.txt",
 			"folderPath": {
 				"value": "testblobstorage/@{dataset().temp}",
 				"type": "Expression"
