@@ -8,7 +8,7 @@
 				"typeProperties": {
 					"variableName": "varTemp",
 					"value": {
-						"value": "@pipeline().parameters.tempParam \n\n\n\n",
+						"value": "@pipeline().parameters.tempParam\n\n\n\n",
 						"type": "Expression"
 					}
 				}
