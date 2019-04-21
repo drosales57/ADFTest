@@ -7,10 +7,19 @@
 				"type": "SetVariable",
 				"typeProperties": {
 					"variableName": "varTemp",
-					"value": "123"
+					"value": {
+						"value": "@concat(pipeline().parameters.tempParam , pipeline().parameters.tempParam )",
+						"type": "Expression"
+					}
 				}
 			}
 		],
+		"parameters": {
+			"tempParam": {
+				"type": "string",
+				"defaultValue": "temp value"
+			}
+		},
 		"variables": {
 			"varTemp": {
 				"type": "String"
