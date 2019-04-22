@@ -25,7 +25,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger7')]",
+			"name": "[concat(parameters('factoryName'), '/trigger32')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -35,17 +35,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
+						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2019-02-18T22:46:00Z",
-						"timeZone": "UTC"
+						"startTime": "2019-04-19T23:21:00.000Z",
+						"timeZone": "UTC",
+						"schedule": {}
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger8')]",
+			"name": "[concat(parameters('factoryName'), '/trigger33')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -55,17 +56,18 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
+						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2019-02-18T22:46:00Z",
-						"timeZone": "UTC"
+						"startTime": "2019-04-19T23:23:00.000Z",
+						"timeZone": "UTC",
+						"schedule": {}
 					}
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger9')]",
+			"name": "[concat(parameters('factoryName'), '/trigger34')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -75,10 +77,11 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
+						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2019-02-18T22:46:00Z",
-						"timeZone": "UTC"
+						"startTime": "2019-04-19T23:27:00.000Z",
+						"timeZone": "UTC",
+						"schedule": {}
 					}
 				}
 			},
