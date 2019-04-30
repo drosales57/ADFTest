@@ -2,12 +2,20 @@
 	"name": "trigger15",
 	"properties": {
 		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			}
+		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Minute",
 				"interval": 1,
-				"startTime": "2019-02-18T22:47:00Z",
+				"startTime": "2019-02-18T22:47:00.000Z",
 				"timeZone": "UTC"
 			}
 		}
