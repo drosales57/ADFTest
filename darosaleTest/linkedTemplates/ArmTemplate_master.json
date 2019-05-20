@@ -52,6 +52,15 @@
 					},
 					"AzureStorageLinkedService_connectionString": {
 						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
+					},
+					"InputDataset_properties_typeProperties_fileName": {
+						"value": "[parameters('InputDataset_properties_typeProperties_fileName')]"
+					},
+					"InputDataset_properties_typeProperties_folderPath": {
+						"value": "[parameters('InputDataset_properties_typeProperties_folderPath')]"
+					},
+					"OutputDataset_properties_typeProperties_folderPath": {
+						"value": "[parameters('OutputDataset_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
@@ -70,15 +79,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"InputDataset_properties_typeProperties_fileName": {
-						"value": "[parameters('InputDataset_properties_typeProperties_fileName')]"
-					},
-					"InputDataset_properties_typeProperties_folderPath": {
-						"value": "[parameters('InputDataset_properties_typeProperties_folderPath')]"
-					},
-					"OutputDataset_properties_typeProperties_folderPath": {
-						"value": "[parameters('OutputDataset_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
