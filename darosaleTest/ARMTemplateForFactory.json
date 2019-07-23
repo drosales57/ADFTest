@@ -75,6 +75,16 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Set Variable1",
+						"type": "SetVariable",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"variableName": "testVar",
+							"value": "7"
+						}
 					}
 				],
 				"parameters": {
