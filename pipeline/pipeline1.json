@@ -28,8 +28,30 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "BlobSource",
+						"recursive": true
+					},
+					"sink": {
+						"type": "BlobSink"
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "InputDataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"temp": "input"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "OutputDataset",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
