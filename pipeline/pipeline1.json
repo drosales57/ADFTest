@@ -5,12 +5,30 @@
 			{
 				"name": "Set Variable1",
 				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
 				"typeProperties": {
 					"variableName": "varTemp",
 					"value": {
 						"value": "@pipeline().parameters.tempParam\n\n\n\n ",
 						"type": "Expression"
 					}
+				}
+			},
+			{
+				"name": "Copy Data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"enableStaging": false
 				}
 			}
 		],
@@ -93,6 +111,7 @@
 			"varTemp": {
 				"type": "String"
 			}
-		}
+		},
+		"annotations": []
 	}
 }
