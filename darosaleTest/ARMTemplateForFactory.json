@@ -122,6 +122,45 @@
 								"type": "Expression"
 							}
 						}
+					},
+					{
+						"name": "Copy Data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "BlobSource",
+								"recursive": true
+							},
+							"sink": {
+								"type": "BlobSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "InputDataset",
+								"type": "DatasetReference",
+								"parameters": {
+									"temp": "input"
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "OutputDataset",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
 					}
 				],
 				"parameters": {
@@ -206,7 +245,10 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/InputDataset')]",
+				"[concat(variables('factoryId'), '/datasets/OutputDataset')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/InputDataset')]",

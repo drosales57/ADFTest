@@ -1,0 +1,158 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "darosaleTest"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Set Variable1",
+						"type": "SetVariable",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"variableName": "varTemp",
+							"value": {
+								"value": "@pipeline().parameters.tempParam\n\n\n\n ",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy Data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "BlobSource",
+								"recursive": true
+							},
+							"sink": {
+								"type": "BlobSink"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "InputDataset",
+								"type": "DatasetReference",
+								"parameters": {
+									"temp": "input"
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "OutputDataset",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"parameters": {
+					"tempParam": {
+						"type": "string",
+						"defaultValue": "temp value"
+					},
+					"p1": {
+						"type": "string"
+					},
+					"p2": {
+						"type": "string"
+					},
+					"p3": {
+						"type": "string"
+					},
+					"p4": {
+						"type": "string"
+					},
+					"p5": {
+						"type": "string"
+					},
+					"p6": {
+						"type": "string"
+					},
+					"p7": {
+						"type": "string"
+					},
+					"p8": {
+						"type": "string"
+					},
+					"p9": {
+						"type": "string"
+					},
+					"p10": {
+						"type": "string"
+					},
+					"p11": {
+						"type": "string"
+					},
+					"p12": {
+						"type": "string"
+					},
+					"p13": {
+						"type": "string"
+					},
+					"p14": {
+						"type": "string"
+					},
+					"p15": {
+						"type": "string"
+					},
+					"p16": {
+						"type": "string"
+					},
+					"p17": {
+						"type": "string"
+					},
+					"p18": {
+						"type": "string"
+					},
+					"p19": {
+						"type": "string"
+					},
+					"p20": {
+						"type": "string"
+					},
+					"p21": {
+						"type": "string"
+					},
+					"p22": {
+						"type": "string"
+					},
+					"p23": {
+						"type": "string"
+					}
+				},
+				"variables": {
+					"varTemp": {
+						"type": "String"
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		}
+	]
+}
