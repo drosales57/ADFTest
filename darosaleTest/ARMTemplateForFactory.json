@@ -274,7 +274,9 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
-									"wildcardFileName": "*.*"
+									"wildcardFolderPath": "ff",
+									"wildcardFileName": "*.*",
+									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
 									"type": "DelimitedTextReadSettings"
@@ -309,7 +311,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"container": {
-							"value": "@pipeline().parameters.slamflkafds",
+							"value": "@pipeline().parameters.lskmdflks",
 							"type": "Expression"
 						}
 					},
