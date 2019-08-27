@@ -311,15 +311,15 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@pipeline().parameters.lskmdflks",
+							"value": "@pipeline().parameters.temp",
 							"type": "Expression"
 						},
 						"folderPath": {
-							"value": "@pipeline().parameters.lskmdflks",
+							"value": "@pipeline().parameters.temp",
 							"type": "Expression"
 						},
 						"container": {
-							"value": "@pipeline().parameters.lskmdflks",
+							"value": "@pipeline().parameters.temp",
 							"type": "Expression"
 						}
 					},
