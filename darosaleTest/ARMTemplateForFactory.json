@@ -310,6 +310,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@pipeline().parameters.lskmdflks",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@pipeline().parameters.lskmdflks",
+							"type": "Expression"
+						},
 						"container": {
 							"value": "@pipeline().parameters.lskmdflks",
 							"type": "Expression"
