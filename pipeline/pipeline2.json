@@ -35,6 +35,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"temp": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
