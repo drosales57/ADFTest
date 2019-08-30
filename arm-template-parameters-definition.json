@@ -1,5 +1,5 @@
 {
-    "Microsoft.DataFactory/factories/pipelines": {
+    "*": {
         "properties": {
             "parameters": {
                     "*": "="                
