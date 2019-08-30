@@ -1,9 +1,119 @@
 {
-    "Microsoft.DataFactory/factories/pipelines": {
+    "Microsoft.DataFactory/factories/pipelines": {  
+    },
+    "Microsoft.DataFactory/factories/integrationRuntimes":{
         "properties": {
-            "parameters": {
-                    "*": "="                
+            "type": "=",
+            "typeProperties": {
+                "ssisProperties": {
+                    "catalogInfo": {
+                        "catalogServerEndpoint": "=",
+                        "catalogAdminUserName": "=",
+                        "catalogAdminPassword": {
+                            "value": "-::secureString"
+                        }
+                    },
+                    "customSetupScriptProperties": {
+                        "sasToken": {
+                            "value": "-::secureString"
+                        }
+                    }
+                },
+                "linkedInfo": {
+                    "key": {
+                        "value": "-::secureString"
+                    },
+                    "resourceId": "="
+                }
             }
         }
+    },
+    "Microsoft.DataFactory/factories/triggers": {
+        "properties": {
+            "pipelines": [{
+                    "parameters": {
+                        "*": "="
+                    }
+                },  
+                "pipelineReference.referenceName"
+            ],
+            "pipeline": {
+                "parameters": {
+                    "*": "="
+                }
+            },
+            "typeProperties": {
+                "scope": "="
+            }
+        }
+   },
+    "Microsoft.DataFactory/factories/linkedServices": {
+        "*": {
+            "properties": {
+                "typeProperties": {
+                    "accountName": "-",
+                    "username": "-",
+                    "userName": "-",
+                    "accessKeyId": "-",
+                    "servicePrincipalId": "-",
+                    "userId": "-",
+                    "clientId": "-",
+                    "clusterUserName": "-",
+                    "clusterSshUserName": "-",
+                    "hostSubscriptionId": "-",
+                    "clusterResourceGroup": "-",
+                    "subscriptionId": "-",
+                    "resourceGroupName": "-",
+                    "tenant": "-",
+                    "dataLakeStoreUri": "-",
+                    "baseUrl": "-",
+                    "database": "-",
+                    "serviceEndpoint": "-",
+                    "batchUri": "-",
+                    "databaseName": "-",
+                    "systemNumber": "-",
+                    "server": "-",
+                    "url":"-",
+                    "aadResourceId": "-",
+                    "connectionString": "|:-connectionString:secureString",
+                    "functionAppUrl": "-",
+                    "existingClusterId": "-"
+                },
+                "connectVia": {
+                    "referenceName": "-"
+                }
+            }
+        },
+        "AzureDatabricks": {
+            "properties":{
+                "typeProperties": {
+                    "accessToken": {
+                        "secretName": "="
+                    },
+                    "newClusterNodeType": "=",
+                    "newClusterNumOfWorker": "=",
+                    "newClusterVersion": "=",
+                    "newClusterSparkEnvVars": {
+                        "*":"-"
+                    },
+                    "existingClusterId": "-"
+                },
+                "connectVia": {
+                    "referenceName": "-"
+                }
+            }
+        },
+        "Odbc": {
+            "properties": {
+                "typeProperties": {
+                    "userName": "=",
+                    "connectionString": {
+                        "secretName": "="
+                    }
+                }
+            }
+        }
+    },
+    "Microsoft.DataFactory/factories/datasets": {
     }
 }
