@@ -1,10 +1,8 @@
 {
     "Microsoft.DataFactory/factories/pipelines": {
-        "Microsoft.DataFactory/factories/pipelines": {
-            "properties": {
-                "parameters": {
-                        "*": "="                
-                }
+        "properties": {
+            "parameters": {
+                    "*": "="                
             }
         }
     }
