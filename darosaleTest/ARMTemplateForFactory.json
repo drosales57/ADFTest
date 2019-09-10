@@ -7,21 +7,47 @@
 			"metadata": "Data Factory Name",
 			"defaultValue": "darosaleTest"
 		},
+		"integrationRuntime_integrationRuntime2": {
+			"type": "string",
+			"metadata": "Integration Runtime Name",
+			"defaultValue": "integrationRuntime2"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureDatabricks2_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks2'"
+		},
 		"AzureStorageLinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
 		},
-		"InputDataset_properties_typeProperties_fileName": {
+		"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
 			"type": "string",
-			"defaultValue": "empty.txt"
+			"defaultValue": "vvv"
 		},
-		"InputDataset_properties_typeProperties_folderPath": {
+		"AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker": {
 			"type": "string",
-			"defaultValue": "testblobstorage/@{dataset().temp}"
+			"defaultValue": "1"
 		},
-		"OutputDataset_properties_typeProperties_folderPath": {
+		"AzureDatabricks1_properties_typeProperties_newClusterVersion": {
 			"type": "string",
-			"defaultValue": "adftutorial/output"
+			"defaultValue": "ddd"
+		},
+		"AzureDatabricks1_properties_connectVia_referenceName": {
+			"type": "string"
+		},
+		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+			"type": "string"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string"
+		},
+		"integrationRuntime2_properties_type": {
+			"type": "string",
+			"defaultValue": "Managed"
 		}
 	},
 	"variables": {
@@ -111,7 +137,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Set Variable1",
+						"name": "Set Variable10",
 						"type": "SetVariable",
 						"dependsOn": [],
 						"userProperties": [],
@@ -290,6 +316,11 @@
 						}
 					}
 				],
+				"parameters": {
+					"temp": {
+						"type": "string"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -334,6 +365,32 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureStorageLinkedService",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "investigation"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/InputDataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -360,9 +417,9 @@
 						"skipLineCount": 0,
 						"firstRowAsHeader": false
 					},
-					"fileName": "[parameters('InputDataset_properties_typeProperties_fileName')]",
+					"fileName": "empty.txt",
 					"folderPath": {
-						"value": "[parameters('InputDataset_properties_typeProperties_folderPath')]",
+						"value": "testblobstorage/@{dataset().temp}",
 						"type": "Expression"
 					}
 				}
@@ -392,12 +449,80 @@
 						"skipLineCount": 0,
 						"firstRowAsHeader": false
 					},
-					"folderPath": "[parameters('OutputDataset_properties_typeProperties_folderPath')]"
+					"folderPath": "adftutorial/output"
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"parameters": {
+					"dafdsafds": {
+						"type": "string",
+						"defaultValue": "fdsaf"
+					}
+				},
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://eastus.azuredatabricks.net",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"newClusterNodeType": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNodeType')]",
+					"newClusterNumOfWorker": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker')]",
+					"newClusterVersion": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterVersion')]"
+				},
+				"connectVia": {
+					"referenceName": "[parameters('AzureDatabricks1_properties_connectVia_referenceName')]",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/', parameters('AzureDatabricks1_properties_connectVia_referenceName'))]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "kjnjkn",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDatabricks2_accessToken')]"
+					},
+					"existingClusterId": "[parameters('AzureDatabricks2_properties_typeProperties_existingClusterId')]"
+				}
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureStorageLinkedService')]",
@@ -408,6 +533,21 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureStorageLinkedService_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService1_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": false,
+					"authenticationType": "Anonymous"
 				}
 			},
 			"dependsOn": []
@@ -1048,6 +1188,60 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_integrationRuntime2'))]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "[parameters('integrationRuntime2_properties_type')]",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 0
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "DelimitedText1",
+								"type": "DatasetReference"
+							},
+							"name": "source1",
+							"typeProperties": {}
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "DelimitedText2",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [],
+					"script": "\n\nsource(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> source1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> sink1"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DelimitedText2')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]"
+			]
 		}
 	]
 }

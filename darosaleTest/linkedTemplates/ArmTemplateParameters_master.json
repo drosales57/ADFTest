@@ -5,17 +5,38 @@
 		"factoryName": {
 			"value": "darosaleTest"
 		},
+		"integrationRuntime_integrationRuntime2": {
+			"value": "integrationRuntime2"
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricks2_accessToken": {
+			"value": ""
+		},
 		"AzureStorageLinkedService_connectionString": {
 			"value": ""
 		},
-		"InputDataset_properties_typeProperties_fileName": {
-			"value": "empty.txt"
+		"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
+			"value": "vvv"
 		},
-		"InputDataset_properties_typeProperties_folderPath": {
-			"value": "testblobstorage/@{dataset().temp}"
+		"AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker": {
+			"value": "1"
 		},
-		"OutputDataset_properties_typeProperties_folderPath": {
-			"value": "adftutorial/output"
+		"AzureDatabricks1_properties_typeProperties_newClusterVersion": {
+			"value": "ddd"
+		},
+		"AzureDatabricks1_properties_connectVia_referenceName": {
+			"value": ""
+		},
+		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+			"value": ""
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": ""
+		},
+		"integrationRuntime2_properties_type": {
+			"value": "Managed"
 		},
 		"containerUri": {
 			"value": ""

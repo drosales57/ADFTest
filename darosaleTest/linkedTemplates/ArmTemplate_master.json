@@ -7,21 +7,47 @@
 			"metadata": "Data Factory Name",
 			"defaultValue": "darosaleTest"
 		},
+		"integrationRuntime_integrationRuntime2": {
+			"type": "string",
+			"metadata": "Integration Runtime Name",
+			"defaultValue": "integrationRuntime2"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureDatabricks2_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks2'"
+		},
 		"AzureStorageLinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
 		},
-		"InputDataset_properties_typeProperties_fileName": {
+		"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
 			"type": "string",
-			"defaultValue": "empty.txt"
+			"defaultValue": "vvv"
 		},
-		"InputDataset_properties_typeProperties_folderPath": {
+		"AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker": {
 			"type": "string",
-			"defaultValue": "testblobstorage/@{dataset().temp}"
+			"defaultValue": "1"
 		},
-		"OutputDataset_properties_typeProperties_folderPath": {
+		"AzureDatabricks1_properties_typeProperties_newClusterVersion": {
 			"type": "string",
-			"defaultValue": "adftutorial/output"
+			"defaultValue": "ddd"
+		},
+		"AzureDatabricks1_properties_connectVia_referenceName": {
+			"type": "string"
+		},
+		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+			"type": "string"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string"
+		},
+		"integrationRuntime2_properties_type": {
+			"type": "string",
+			"defaultValue": "Managed"
 		},
 		"containerUri": {
 			"type": "string",
@@ -50,17 +76,38 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"integrationRuntime_integrationRuntime2": {
+						"value": "[parameters('integrationRuntime_integrationRuntime2')]"
+					},
+					"AzureDatabricks2_accessToken": {
+						"value": "[parameters('AzureDatabricks2_accessToken')]"
+					},
 					"AzureStorageLinkedService_connectionString": {
 						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
 					},
-					"InputDataset_properties_typeProperties_fileName": {
-						"value": "[parameters('InputDataset_properties_typeProperties_fileName')]"
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
-					"InputDataset_properties_typeProperties_folderPath": {
-						"value": "[parameters('InputDataset_properties_typeProperties_folderPath')]"
+					"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks2_properties_typeProperties_existingClusterId')]"
 					},
-					"OutputDataset_properties_typeProperties_folderPath": {
-						"value": "[parameters('OutputDataset_properties_typeProperties_folderPath')]"
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"integrationRuntime2_properties_type": {
+						"value": "[parameters('integrationRuntime2_properties_type')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNodeType')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_newClusterVersion": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterVersion')]"
+					},
+					"AzureDatabricks1_properties_connectVia_referenceName": {
+						"value": "[parameters('AzureDatabricks1_properties_connectVia_referenceName')]"
 					}
 				}
 			},
