@@ -1,13 +1,33 @@
 {
 	"name": "AzureDatabricks2",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
+		"parameters": {
+			"secretName": {
+				"type": "string",
+				"defaultValue": "adfasfsadfds"
+			},
+			"existingClusterId": {
+				"type": "string",
+				"defaultValue": "adfsafdsafsd"
+			}
+		},
 		"annotations": [],
 		"type": "AzureDatabricks",
 		"typeProperties": {
-			"domain": "kjnjkn",
-			"existingClusterId": "bhuihuinjkn",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBUk9TQUxFVEVTVF85YjU4NDdlOC05MWY5LTQ5YWEtYjIzYy01MDFiODE3YjU4NjkiDQp9"
+			"domain": "https://westeurope.azuredatabricks.net",
+			"accessToken": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": {
+					"value": "@linkedService().secretName",
+					"type": "Expression"
+				}
+			},
+			"existingClusterId": "@linkedService().existingClusterId"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
