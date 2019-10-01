@@ -11,9 +11,6 @@
 		"AzureDatabricks1_accessToken": {
 			"value": ""
 		},
-		"AzureDatabricks2_accessToken": {
-			"value": ""
-		},
 		"AzureStorageLinkedService_connectionString": {
 			"value": ""
 		},
@@ -29,7 +26,13 @@
 		"AzureDatabricks1_properties_connectVia_referenceName": {
 			"value": ""
 		},
+		"AzureDatabricks2_properties_typeProperties_accessToken_secretName": {
+			"value": "@linkedService().secretName"
+		},
 		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": ""
 		},
 		"RestService1_properties_typeProperties_url": {

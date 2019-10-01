@@ -4,21 +4,17 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory Name",
+			"metadata": "Data Factory name",
 			"defaultValue": "darosaleTest"
 		},
 		"integrationRuntime_integrationRuntime2": {
 			"type": "string",
-			"metadata": "Integration Runtime Name",
+			"metadata": "Integration runtime name",
 			"defaultValue": "integrationRuntime2"
 		},
 		"AzureDatabricks1_accessToken": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
-		},
-		"AzureDatabricks2_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks2'"
 		},
 		"AzureStorageLinkedService_connectionString": {
 			"type": "secureString",
@@ -39,7 +35,14 @@
 		"AzureDatabricks1_properties_connectVia_referenceName": {
 			"type": "string"
 		},
+		"AzureDatabricks2_properties_typeProperties_accessToken_secretName": {
+			"type": "string",
+			"defaultValue": "@linkedService().secretName"
+		},
 		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+			"type": "string"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string"
 		},
 		"RestService1_properties_typeProperties_url": {
@@ -55,7 +58,7 @@
 		},
 		"containerSasToken": {
 			"type": "string",
-			"metadata": "Sas Token to storage account containing linked ARM templates"
+			"metadata": "Sas token to storage account containing linked ARM templates"
 		}
 	},
 	"variables": {
@@ -79,17 +82,14 @@
 					"integrationRuntime_integrationRuntime2": {
 						"value": "[parameters('integrationRuntime_integrationRuntime2')]"
 					},
-					"AzureDatabricks2_accessToken": {
-						"value": "[parameters('AzureDatabricks2_accessToken')]"
-					},
 					"AzureStorageLinkedService_connectionString": {
 						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
 					},
 					"AzureDatabricks1_accessToken": {
 						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
-					"AzureDatabricks2_properties_typeProperties_existingClusterId": {
-						"value": "[parameters('AzureDatabricks2_properties_typeProperties_existingClusterId')]"
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
 					},
 					"RestService1_properties_typeProperties_url": {
 						"value": "[parameters('RestService1_properties_typeProperties_url')]"
@@ -108,6 +108,12 @@
 					},
 					"AzureDatabricks1_properties_connectVia_referenceName": {
 						"value": "[parameters('AzureDatabricks1_properties_connectVia_referenceName')]"
+					},
+					"AzureDatabricks2_properties_typeProperties_accessToken_secretName": {
+						"value": "[parameters('AzureDatabricks2_properties_typeProperties_accessToken_secretName')]"
+					},
+					"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks2_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},
