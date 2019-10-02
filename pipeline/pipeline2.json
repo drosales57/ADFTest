@@ -51,6 +51,15 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 22
 				}
+			},
+			{
+				"name": "Wait3",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 33
+				}
 			}
 		],
 		"parameters": {
