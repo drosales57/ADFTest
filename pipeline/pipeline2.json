@@ -69,6 +69,15 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 44
 				}
+			},
+			{
+				"name": "Wait5",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 55
+				}
 			}
 		],
 		"parameters": {
