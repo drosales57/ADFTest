@@ -60,6 +60,15 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 33
 				}
+			},
+			{
+				"name": "Wait4",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 44
+				}
 			}
 		],
 		"parameters": {
