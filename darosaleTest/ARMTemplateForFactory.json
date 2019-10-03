@@ -362,6 +362,15 @@
 						"typeProperties": {
 							"waitTimeInSeconds": 55
 						}
+					},
+					{
+						"name": "Wait6",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 66
+						}
 					}
 				],
 				"parameters": {
@@ -488,6 +497,26 @@
 						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 11
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline9')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Wait1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 1
 						}
 					}
 				],
