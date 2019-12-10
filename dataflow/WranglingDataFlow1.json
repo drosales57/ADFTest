@@ -1,0 +1,32 @@
+{
+	"name": "WranglingDataFlow1",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "DelimitedText6",
+					"script": "",
+					"dataset": {
+						"referenceName": "DelimitedText6",
+						"type": "DatasetReference"
+					},
+					"typeProperties": {
+						"readMode": null
+					}
+				}
+			],
+			"sinks": [
+				{
+					"name": "Sink1",
+					"dataset": {
+						"referenceName": "DelimitedText3",
+						"type": "DatasetReference"
+					},
+					"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> Sink1"
+				}
+			],
+			"script": "section Section1;\r\nshared DelimitedText6 = let\r\n  AdfDoc = AzureStorage.BlobContents(\"https://darosaleblobstorage.blob.core.windows.net/testblobstorage/Delivery Log.csv\"),\r\n  Csv = Csv.Document(AdfDoc, [Delimiter = \",\", Encoding = TextEncoding.Utf8, QuoteStyle = QuoteStyle.Csv])\r\nin\r\n  Csv;\r\nshared UserQuery = let\r\n  Source = DelimitedText6\r\nin\r\n  Source;\r\n"
+		}
+	}
+}
