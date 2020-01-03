@@ -1,0 +1,11 @@
+{
+	"name": "Kusto1",
+	"properties": {
+		"annotations": [],
+		"type": "Kusto",
+		"typeProperties": {
+			"endpoint": "asdfsfds",
+			"servicePrincipalId": ""
+		}
+	}
+}
