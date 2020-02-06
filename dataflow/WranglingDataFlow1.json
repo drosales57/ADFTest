@@ -1,0 +1,32 @@
+{
+	"name": "WranglingDataFlow1",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "DelimitedText1",
+					"script": "",
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"typeProperties": {
+						"readMode": null
+					}
+				}
+			],
+			"sinks": [
+				{
+					"name": "Sink1",
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
+					"script": "sink(input(\n\t\tColumn_1 as string,\n\t\tColumn_2 as string,\n\t\tColumn_3 as string,\n\t\tColumn_4 as string,\n\t\tColumn_5 as string,\n\t\tColumn_6 as string,\n\t\tColumn_7 as string,\n\t\tColumn_8 as string,\n\t\tColumn_9 as string,\n\t\tColumn_10 as string,\n\t\tColumn_11 as string,\n\t\tColumn_12 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Sink1"
+				}
+			],
+			"script": "section Section1;\r\nshared DelimitedText1 = let\r\n  AdfDoc = AzureStorage.BlobContents(\"https://darosaleblobstorage.blob.core.windows.net/testblobstorage/Delivery Log.csv\"),\r\n  Csv = Csv.Document(AdfDoc, [Delimiter = \",\", Encoding = TextEncoding.Utf8, QuoteStyle = QuoteStyle.Csv])\r\nin\r\n  Csv;\r\nshared UserQuery = let\r\n  Source = DelimitedText1\r\nin\r\n  Source;\r\n"
+		}
+	}
+}
