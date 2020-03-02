@@ -1,0 +1,11 @@
+{
+    "id": "/subscriptions/1e42591f-1f0c-4c5a-b7f2-a268f6105ec5/resourceGroups/darosaleMDPRG/providers/Microsoft.Synapse/workspaces/darosalesynapsescus/managevirtualnetworks/default/managedprivateendpoints/temp1",
+    "name": "temp1",
+    "type": "Microsoft.Synapse/workspace/managevirtualnetworks/managedprivateendpoints",
+    "properties": {
+        "description": "criptions/1e42591f-1f0c-4c5a-b7f2-a268f6105ec5/resourceGroups/AjayRg/providers/Microsoft.Storage/storageAccounts/ajaywsgen2",
+        "privateLinkResourceId": "criptions/1e42591f-1f0c-4c5a-b7f2-a268f6105ec5/resourceGroups/AjayRg/providers/Microsoft.Storage/storageAccounts/ajaywsgen2",
+        "groupId": "blob",
+        "isReserved": true
+    }
+}
