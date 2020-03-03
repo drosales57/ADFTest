@@ -1,0 +1,7 @@
+{
+	"name": "managedPrivateEndpoint4",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/b3ee3a7f-7614-4644-ad07-afa832620b4b/resourceGroups/bingl/providers/Microsoft.Sql/servers/syncsignoff1",
+		"groupId": "server"
+	}
+}
