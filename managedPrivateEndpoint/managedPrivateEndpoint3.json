@@ -1,0 +1,7 @@
+{
+	"name": "managedPrivateEndpoint3",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/b3ee3a7f-7614-4644-ad07-afa832620b4b/resourceGroups/Hoyao/providers/Microsoft.Sql/servers/hoyaotest",
+		"groupId": "server"
+	}
+}

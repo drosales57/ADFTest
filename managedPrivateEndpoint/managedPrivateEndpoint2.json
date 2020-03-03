@@ -1,0 +1,7 @@
+{
+	"name": "managedPrivateEndpoint2",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/b3ee3a7f-7614-4644-ad07-afa832620b4b/resourceGroups/MSIFunctionalTest/providers/Microsoft.Sql/servers/bofantest",
+		"groupId": "server"
+	}
+}
