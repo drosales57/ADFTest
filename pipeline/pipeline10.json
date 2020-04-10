@@ -12,6 +12,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"stringParam": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
