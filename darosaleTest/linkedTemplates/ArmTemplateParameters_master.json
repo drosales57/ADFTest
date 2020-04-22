@@ -17,6 +17,9 @@
 		"Kusto1_servicePrincipalKey": {
 			"value": ""
 		},
+		"AzureFunction1_functionKey": {
+			"value": ""
+		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"value": "cdvxcvxczvc"
 		},
@@ -49,6 +52,9 @@
 		},
 		"integrationRuntime2_properties_type": {
 			"value": "Managed"
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"value": ""
 		},
 		"containerUri": {
 			"value": ""

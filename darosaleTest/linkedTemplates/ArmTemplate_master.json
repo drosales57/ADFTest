@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalKey' of 'Kusto1'"
 		},
+		"AzureFunction1_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
+		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
 			"defaultValue": "cdvxcvxczvc"
@@ -62,6 +66,9 @@
 			"type": "string",
 			"defaultValue": "Managed"
 		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"type": "string"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -98,6 +105,9 @@
 					"Kusto1_servicePrincipalKey": {
 						"value": "[parameters('Kusto1_servicePrincipalKey')]"
 					},
+					"AzureFunction1_functionKey": {
+						"value": "[parameters('AzureFunction1_functionKey')]"
+					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
 					},
@@ -109,6 +119,9 @@
 					},
 					"integrationRuntime2_properties_type": {
 						"value": "[parameters('integrationRuntime2_properties_type')]"
+					},
+					"AzureFunction1_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
 					}
 				}
 			},
