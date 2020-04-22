@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
 		},
+		"AzureFunction1_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
@@ -23,9 +27,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalKey' of 'Kusto1'"
 		},
-		"AzureFunction1_functionKey": {
+		"AzureBlobStorageTODelete_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageTODelete'"
 		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
@@ -53,6 +57,9 @@
 		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
 			"type": "string"
 		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"type": "string"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string"
 		},
@@ -65,9 +72,6 @@
 		"integrationRuntime2_properties_type": {
 			"type": "string",
 			"defaultValue": "Managed"
-		},
-		"AzureFunction1_properties_typeProperties_functionAppUrl": {
-			"type": "string"
 		},
 		"containerUri": {
 			"type": "string",
@@ -96,6 +100,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureFunction1_functionKey": {
+						"value": "[parameters('AzureFunction1_functionKey')]"
+					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
 					},
@@ -105,8 +112,11 @@
 					"Kusto1_servicePrincipalKey": {
 						"value": "[parameters('Kusto1_servicePrincipalKey')]"
 					},
-					"AzureFunction1_functionKey": {
-						"value": "[parameters('AzureFunction1_functionKey')]"
+					"AzureBlobStorageTODelete_connectionString": {
+						"value": "[parameters('AzureBlobStorageTODelete_connectionString')]"
+					},
+					"AzureFunction1_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
 					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
@@ -119,9 +129,6 @@
 					},
 					"integrationRuntime2_properties_type": {
 						"value": "[parameters('integrationRuntime2_properties_type')]"
-					},
-					"AzureFunction1_properties_typeProperties_functionAppUrl": {
-						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
 					}
 				}
 			},
