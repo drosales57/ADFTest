@@ -14,6 +14,10 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"functionName": "njkn",
+					"method": "GET"
+				},
 				"linkedServiceName": {
 					"referenceName": "AzureFunction1",
 					"type": "LinkedServiceReference"
