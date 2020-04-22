@@ -6,61 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "darosaleTest"
-		},
-		"AzureDatabricks1_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
-		},
-		"AzureSqlDatabase1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
-		},
-		"AzureStorageLinkedService_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
-		},
-		"Kusto1_servicePrincipalKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalKey' of 'Kusto1'"
-		},
-		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "cdvxcvxczvc"
-		},
-		"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
-			"type": "string",
-			"defaultValue": "vvv"
-		},
-		"AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker": {
-			"type": "string",
-			"defaultValue": "1"
-		},
-		"AzureDatabricks1_properties_typeProperties_newClusterVersion": {
-			"type": "string",
-			"defaultValue": "ddd"
-		},
-		"AzureDatabricks1_properties_connectVia_referenceName": {
-			"type": "string"
-		},
-		"AzureDatabricks2_properties_typeProperties_accessToken_secretName": {
-			"type": "string",
-			"defaultValue": "@linkedService().secretName"
-		},
-		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
-			"type": "string"
-		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"type": "string"
-		},
-		"Kusto1_properties_typeProperties_servicePrincipalId": {
-			"type": "string"
-		},
-		"RestService1_properties_typeProperties_url": {
-			"type": "string"
-		},
-		"integrationRuntime2_properties_type": {
-			"type": "string",
-			"defaultValue": "Managed"
 		}
 	},
 	"variables": {
@@ -110,8 +55,7 @@
 						"outputs": [
 							{
 								"referenceName": "OutputDataset",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -196,8 +140,7 @@
 						"outputs": [
 							{
 								"referenceName": "OutputDataset",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -388,8 +331,7 @@
 							},
 							"dataset": {
 								"referenceName": "DelimitedText1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						}
 					},
@@ -622,9 +564,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/BinarySourceFileStore')]",
@@ -697,9 +637,7 @@
 				},
 				"schema": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
@@ -723,9 +661,7 @@
 				},
 				"schema": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText3')]",
@@ -813,9 +749,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText5')]",
@@ -838,9 +772,7 @@
 				},
 				"schema": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText6')]",
@@ -902,9 +834,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/InputDataset')]",
@@ -940,9 +870,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/OutputDataset')]",
@@ -968,9 +896,7 @@
 					"folderPath": "adftutorial/output"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/RestResource1')]",
@@ -983,7 +909,6 @@
 				},
 				"annotations": [],
 				"type": "RestResource",
-				"typeProperties": {},
 				"schema": []
 			},
 			"dependsOn": [
@@ -1004,7 +929,7 @@
 							"referenceName": "AzureKeyVault1",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "[parameters('AzureBlobStorage1_properties_typeProperties_connectionString_secretName')]"
+						"secretName": "cdvxcvxczvc"
 					}
 				}
 			},
@@ -1029,20 +954,18 @@
 					"domain": "https://eastus.azuredatabricks.net",
 					"accessToken": {
 						"type": "SecureString",
-						"value": "[parameters('AzureDatabricks1_accessToken')]"
+						"value": "**********"
 					},
-					"newClusterNodeType": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNodeType')]",
-					"newClusterNumOfWorker": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker')]",
-					"newClusterVersion": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterVersion')]"
+					"newClusterNodeType": "vvv",
+					"newClusterNumOfWorker": "1",
+					"newClusterVersion": "ddd"
 				},
 				"connectVia": {
-					"referenceName": "[parameters('AzureDatabricks1_properties_connectVia_referenceName')]",
+					"referenceName": "integrationRuntime2",
 					"type": "IntegrationRuntimeReference"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/', parameters('AzureDatabricks1_properties_connectVia_referenceName'))]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureDatabricks2')]",
@@ -1070,11 +993,11 @@
 							"type": "LinkedServiceReference"
 						},
 						"secretName": {
-							"value": "[parameters('AzureDatabricks2_properties_typeProperties_accessToken_secretName')]",
+							"value": "@linkedService().secretName",
 							"type": "Expression"
 						}
 					},
-					"existingClusterId": "[parameters('AzureDatabricks2_properties_typeProperties_existingClusterId')]"
+					"existingClusterId": "@linkedService().existingClusterId"
 				}
 			},
 			"dependsOn": [
@@ -1089,33 +1012,7 @@
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureStorageLinkedService')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureStorageLinkedService_connectionString')]"
+					"baseUrl": "https://temp.com"
 				}
 			},
 			"dependsOn": []
@@ -1129,10 +1026,10 @@
 				"type": "Kusto",
 				"typeProperties": {
 					"endpoint": "asdfsfds",
-					"servicePrincipalId": "[parameters('Kusto1_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalId": "",
 					"servicePrincipalKey": {
 						"type": "SecureString",
-						"value": "[parameters('Kusto1_servicePrincipalKey')]"
+						"value": "**********"
 					}
 				}
 			},
@@ -1146,7 +1043,7 @@
 				"annotations": [],
 				"type": "RestService",
 				"typeProperties": {
-					"url": "[parameters('RestService1_properties_typeProperties_url')]",
+					"url": "http://www.mocky.io/v2/5d64c363320000cac3ba2116",
 					"enableServerCertificateValidation": false,
 					"authenticationType": "Anonymous"
 				}
@@ -1165,15 +1062,13 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					},
 					{
 						"pipelineReference": {
 							"referenceName": "PipelineTest1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1203,15 +1098,13 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					},
 					{
 						"pipelineReference": {
 							"referenceName": "PipelineTest1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1241,8 +1134,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1271,8 +1163,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1301,8 +1192,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1331,8 +1221,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1361,8 +1250,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1391,8 +1279,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1420,8 +1307,7 @@
 					"pipelineReference": {
 						"referenceName": "pipeline1",
 						"type": "PipelineReference"
-					},
-					"parameters": {}
+					}
 				},
 				"type": "TumblingWindowTrigger",
 				"typeProperties": {
@@ -1452,8 +1338,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1482,8 +1367,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1512,8 +1396,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1542,8 +1425,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1572,8 +1454,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1602,8 +1483,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1632,8 +1512,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1662,8 +1541,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1692,8 +1570,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1722,8 +1599,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1752,8 +1628,7 @@
 						"pipelineReference": {
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1789,60 +1664,6 @@
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime2')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "[parameters('integrationRuntime2_properties_type')]",
-				"typeProperties": {
-					"computeProperties": {
-						"location": "AutoResolve",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 8,
-							"timeToLive": 0
-						}
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WranglingDataFlow1')]",
-			"type": "Microsoft.DataFactory/factories/dataflows",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "WranglingDataFlow",
-				"typeProperties": {
-					"sources": [
-						{
-							"name": "DelimitedText6",
-							"script": "",
-							"dataset": {
-								"referenceName": "DelimitedText6",
-								"type": "DatasetReference"
-							}
-						}
-					],
-					"sinks": [
-						{
-							"name": "Sink1",
-							"dataset": {
-								"referenceName": "DelimitedText3",
-								"type": "DatasetReference"
-							},
-							"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> Sink1"
-						}
-					],
-					"script": "section Section1;\r\nshared DelimitedText6 = let\r\n  AdfDoc = AzureStorage.BlobContents(\"https://darosaleblobstorage.blob.core.windows.net/testblobstorage/Delivery Log.csv\"),\r\n  Csv = Csv.Document(AdfDoc, [Delimiter = \",\", Encoding = TextEncoding.Utf8, QuoteStyle = QuoteStyle.Csv])\r\nin\r\n  Csv;\r\nshared UserQuery = let\r\n  Source = DelimitedText6\r\nin\r\n  Source;\r\n"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText6')]",
-				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]"
-			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/dataflow1')]",

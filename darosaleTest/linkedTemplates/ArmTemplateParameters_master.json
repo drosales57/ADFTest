@@ -5,14 +5,20 @@
 		"factoryName": {
 			"value": "darosaleTest"
 		},
-		"integrationRuntime_integrationRuntime2": {
-			"value": "integrationRuntime2"
-		},
 		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
 		"AzureStorageLinkedService_connectionString": {
 			"value": ""
+		},
+		"Kusto1_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"value": "cdvxcvxczvc"
 		},
 		"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
 			"value": "vvv"
@@ -33,6 +39,9 @@
 			"value": ""
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": ""
+		},
+		"Kusto1_properties_typeProperties_servicePrincipalId": {
 			"value": ""
 		},
 		"RestService1_properties_typeProperties_url": {

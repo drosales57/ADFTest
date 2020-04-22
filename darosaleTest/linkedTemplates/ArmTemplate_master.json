@@ -7,18 +7,25 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "darosaleTest"
 		},
-		"integrationRuntime_integrationRuntime2": {
-			"type": "string",
-			"metadata": "Integration runtime name",
-			"defaultValue": "integrationRuntime2"
-		},
 		"AzureDatabricks1_accessToken": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
 		"AzureStorageLinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
+		},
+		"Kusto1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'Kusto1'"
+		},
+		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "cdvxcvxczvc"
 		},
 		"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
 			"type": "string",
@@ -43,6 +50,9 @@
 			"type": "string"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string"
+		},
+		"Kusto1_properties_typeProperties_servicePrincipalId": {
 			"type": "string"
 		},
 		"RestService1_properties_typeProperties_url": {
@@ -79,41 +89,26 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"integrationRuntime_integrationRuntime2": {
-						"value": "[parameters('integrationRuntime_integrationRuntime2')]"
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
 					},
 					"AzureStorageLinkedService_connectionString": {
 						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
 					},
-					"AzureDatabricks1_accessToken": {
-						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					"Kusto1_servicePrincipalKey": {
+						"value": "[parameters('Kusto1_servicePrincipalKey')]"
 					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"Kusto1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('Kusto1_properties_typeProperties_servicePrincipalId')]"
 					},
 					"RestService1_properties_typeProperties_url": {
 						"value": "[parameters('RestService1_properties_typeProperties_url')]"
 					},
 					"integrationRuntime2_properties_type": {
 						"value": "[parameters('integrationRuntime2_properties_type')]"
-					},
-					"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
-						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNodeType')]"
-					},
-					"AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker": {
-						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker')]"
-					},
-					"AzureDatabricks1_properties_typeProperties_newClusterVersion": {
-						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterVersion')]"
-					},
-					"AzureDatabricks1_properties_connectVia_referenceName": {
-						"value": "[parameters('AzureDatabricks1_properties_connectVia_referenceName')]"
-					},
-					"AzureDatabricks2_properties_typeProperties_accessToken_secretName": {
-						"value": "[parameters('AzureDatabricks2_properties_typeProperties_accessToken_secretName')]"
-					},
-					"AzureDatabricks2_properties_typeProperties_existingClusterId": {
-						"value": "[parameters('AzureDatabricks2_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},
@@ -132,6 +127,30 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_connectionString_secretName')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNodeType')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNumOfWorker')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_newClusterVersion": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterVersion')]"
+					},
+					"AzureDatabricks1_properties_connectVia_referenceName": {
+						"value": "[parameters('AzureDatabricks1_properties_connectVia_referenceName')]"
+					},
+					"AzureDatabricks2_properties_typeProperties_accessToken_secretName": {
+						"value": "[parameters('AzureDatabricks2_properties_typeProperties_accessToken_secretName')]"
+					},
+					"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks2_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},
