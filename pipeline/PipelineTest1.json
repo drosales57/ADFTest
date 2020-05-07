@@ -64,6 +64,9 @@
 				"type": "Boolean"
 			}
 		},
+		"folder": {
+			"name": "jnkjnijoijdfs"
+		},
 		"annotations": []
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
