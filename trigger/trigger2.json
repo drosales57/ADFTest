@@ -1,7 +1,8 @@
 {
 	"name": "trigger2",
 	"properties": {
-		"runtimeState": "Stopped",
+		"annotations": [],
+		"runtimeState": "Started",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "pipeline1",
@@ -17,7 +18,8 @@
 			"maxConcurrency": 50,
 			"retryPolicy": {
 				"intervalInSeconds": 30
-			}
+			},
+			"dependsOn": []
 		}
 	}
 }
