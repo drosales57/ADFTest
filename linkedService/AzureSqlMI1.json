@@ -1,0 +1,12 @@
+{
+	"name": "AzureSqlMI1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlMI",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=ajaysqlmi.public.40fbafd94ef3.database.windows.net,3342;initial catalog=mydb;user id=joijm",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBUk9TQUxFVEVTVF8wOWQ4MDliYy0wY2I5LTRkMTktOGJmYS0wZGE1Njg4ODA4NjQiDQp9"
+		}
+	}
+}
