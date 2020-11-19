@@ -5,10 +5,16 @@
 		"factoryName": {
 			"value": "darosaleTest"
 		},
-		"AzureDatabricks1_accessToken": {
+		"AzureBlobStorage3_connectionString": {
 			"value": ""
 		},
-		"AzureFunction1_functionKey": {
+		"AzureBlobStorageTODELETE2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorageTODelete_connectionString": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
 			"value": ""
 		},
 		"AzureSqlDatabase1_connectionString": {
@@ -20,10 +26,10 @@
 		"Kusto1_servicePrincipalKey": {
 			"value": ""
 		},
-		"AzureBlobStorageTODelete_connectionString": {
-			"value": ""
-		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"value": "cdvxcvxczvc"
+		},
+		"AzureblobStorage2_properties_typeProperties_connectionString_secretName": {
 			"value": "cdvxcvxczvc"
 		},
 		"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
@@ -42,9 +48,6 @@
 			"value": "@linkedService().secretName"
 		},
 		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
-			"value": ""
-		},
-		"AzureFunction1_properties_typeProperties_functionAppUrl": {
 			"value": ""
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {

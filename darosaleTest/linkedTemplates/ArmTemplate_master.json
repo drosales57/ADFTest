@@ -7,13 +7,21 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "darosaleTest"
 		},
+		"AzureBlobStorage3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
+		},
+		"AzureBlobStorageTODELETE2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageTODELETE2'"
+		},
+		"AzureBlobStorageTODelete_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageTODelete'"
+		},
 		"AzureDatabricks1_accessToken": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
-		},
-		"AzureFunction1_functionKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
 		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
@@ -27,11 +35,11 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalKey' of 'Kusto1'"
 		},
-		"AzureBlobStorageTODelete_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageTODelete'"
-		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "cdvxcvxczvc"
+		},
+		"AzureblobStorage2_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
 			"defaultValue": "cdvxcvxczvc"
 		},
@@ -55,9 +63,6 @@
 			"defaultValue": "@linkedService().secretName"
 		},
 		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
-			"type": "string"
-		},
-		"AzureFunction1_properties_typeProperties_functionAppUrl": {
 			"type": "string"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
@@ -87,7 +92,7 @@
 	},
 	"resources": [
 		{
-			"name": "ArmTemplate_0",
+			"name": "darosaleTest_ArmTemplate_0",
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2018-02-01",
 			"properties": {
@@ -100,8 +105,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureFunction1_functionKey": {
-						"value": "[parameters('AzureFunction1_functionKey')]"
+					"AzureBlobStorage3_connectionString": {
+						"value": "[parameters('AzureBlobStorage3_connectionString')]"
+					},
+					"AzureBlobStorageTODELETE2_connectionString": {
+						"value": "[parameters('AzureBlobStorageTODELETE2_connectionString')]"
+					},
+					"AzureBlobStorageTODelete_connectionString": {
+						"value": "[parameters('AzureBlobStorageTODelete_connectionString')]"
 					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
@@ -111,12 +122,6 @@
 					},
 					"Kusto1_servicePrincipalKey": {
 						"value": "[parameters('Kusto1_servicePrincipalKey')]"
-					},
-					"AzureBlobStorageTODelete_connectionString": {
-						"value": "[parameters('AzureBlobStorageTODelete_connectionString')]"
-					},
-					"AzureFunction1_properties_typeProperties_functionAppUrl": {
-						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
 					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
@@ -135,7 +140,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "ArmTemplate_1",
+			"name": "darosaleTest_ArmTemplate_1",
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2018-02-01",
 			"properties": {
@@ -153,6 +158,9 @@
 					},
 					"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_connectionString_secretName')]"
+					},
+					"AzureblobStorage2_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('AzureblobStorage2_properties_typeProperties_connectionString_secretName')]"
 					},
 					"AzureDatabricks1_properties_typeProperties_newClusterNodeType": {
 						"value": "[parameters('AzureDatabricks1_properties_typeProperties_newClusterNodeType')]"
@@ -175,11 +183,11 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
+				"[resourceId('Microsoft.Resources/deployments', 'darosaleTest_ArmTemplate_0')]"
 			]
 		},
 		{
-			"name": "ArmTemplate_2",
+			"name": "darosaleTest_ArmTemplate_2",
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2018-02-01",
 			"properties": {
@@ -195,7 +203,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_1')]"
+				"[resourceId('Microsoft.Resources/deployments', 'darosaleTest_ArmTemplate_1')]"
 			]
 		}
 	]

@@ -13,34 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger14')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "pipeline1",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 1,
-						"startTime": "2019-02-18T22:47:00.000Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/trigger15')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -61,7 +33,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:47:00.000Z",
+						"startTime": "2019-02-18T22:47:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -89,7 +61,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:47:00.000Z",
+						"startTime": "2019-02-18T22:47:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -117,7 +89,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:47:00.000Z",
+						"startTime": "2019-02-18T22:47:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -174,7 +146,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:45:00.000Z",
+						"startTime": "2019-02-18T22:45:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -202,7 +174,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-14T21:03:00.000Z",
+						"startTime": "2019-02-14T21:03:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -230,7 +202,7 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2019-04-19T22:54:00.000Z",
+						"startTime": "2019-04-19T22:54:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -258,7 +230,7 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2019-04-19T23:21:00.000Z",
+						"startTime": "2019-04-19T23:21:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -286,7 +258,7 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2019-04-19T23:23:00.000Z",
+						"startTime": "2019-04-19T23:23:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -314,7 +286,7 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2019-04-19T23:27:00.000Z",
+						"startTime": "2019-04-19T23:27:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -342,7 +314,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:46:00.000Z",
+						"startTime": "2019-02-18T22:46:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -370,7 +342,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:46:00.000Z",
+						"startTime": "2019-02-18T22:46:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -398,7 +370,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:46:00.000Z",
+						"startTime": "2019-02-18T22:46:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -426,7 +398,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:46:00.000Z",
+						"startTime": "2019-02-18T22:46:00Z",
 						"timeZone": "UTC"
 					}
 				}
@@ -454,7 +426,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2019-02-18T22:46:00.000Z",
+						"startTime": "2019-02-18T22:46:00Z",
 						"timeZone": "UTC"
 					}
 				}
