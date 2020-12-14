@@ -1,0 +1,26 @@
+{
+	"name": "Hive1",
+	"properties": {
+		"annotations": [],
+		"type": "Hive",
+		"typeProperties": {
+			"host": "dafsd",
+			"port": 443,
+			"serverType": "HiveServer1",
+			"thriftTransportProtocol": "HTTP",
+			"authenticationType": "UsernameAndPassword",
+			"serviceDiscoveryMode": false,
+			"useNativeQuery": false,
+			"username": "fsfsd",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "asfdds"
+			},
+			"enableSsl": false
+		}
+	}
+}
